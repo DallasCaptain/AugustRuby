@@ -11,12 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200805155011) do
+ActiveRecord::Schema.define(version: 20200805210612) do
+
+  create_table "pizza_toppings", force: :cascade do |t|
+    t.integer  "pizza_id"
+    t.integer  "topping_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "pizza_toppings", ["pizza_id"], name: "index_pizza_toppings_on_pizza_id"
+  add_index "pizza_toppings", ["topping_id"], name: "index_pizza_toppings_on_topping_id"
 
   create_table "pizzas", force: :cascade do |t|
     t.string   "crust"
     t.string   "sauce"
     t.integer  "size"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "toppings", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
