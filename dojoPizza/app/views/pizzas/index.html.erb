@@ -1,4 +1,11 @@
 <h1>Pizzas#index</h1>
+<% if flash[:errors] %>
+    <ul>
+        <% flash[:errors].each do |error| %>
+            <li><%= error %></li>
+        <% end %>
+    </ul>
+<% end %>
 <% @pizzas.each do |pizza| %>
     <p><%= pizza.crust %></p>
 <% end %>

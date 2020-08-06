@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  get 'pizzas/index'
+  get '' => 'pizzas#home'
+  get 'pizzas' => 'pizzas#index'
+  get 'pizzas/new' => 'pizzas#new'
+  get 'oops' => 'pizzas#create'
+  get 'pizzas/:id' => 'pizzas#show'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
