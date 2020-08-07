@@ -5,13 +5,20 @@ class PizzasController < ApplicationController
   end
 
   def index
-    
     @pizzas = Pizza.all
-    render plain: '@pizzas'
   end
 
   def new
 
+  end
+
+  def edit
+    @pizza = Pizza.find(params[:id])
+  end
+
+  def update
+    Pizza.update(params[:id],pizza_params)
+    redirect_to '/pizzas'
   end
 
   def show
@@ -19,8 +26,23 @@ class PizzasController < ApplicationController
   end
 
   def create
-    flash[:errors] = ['You loaded via oops','Error 2']
+    
+    Pizza.create(pizza_params)
+
+    # @pizza = Pizza.new
+    # @pizza.crust = params[:crust]
+    # @pizza.crust = params[:sauce]
+    # @pizza.crust = params[:size]
+    # @pizza.save
+    flash[:errors] = ['You loaded via pizza submission','Error 2']
     redirect_to '/pizzas'
   end
+
+  private
+
+  def pizza_params
+    params.require(:pizza).permit(:crust,:sauce,:size)
+  end
+
 
 end

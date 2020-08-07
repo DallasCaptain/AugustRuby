@@ -1,1 +1,7 @@
-<h1>This is the new file</h1>
+<form action='/pizzas' method='POST'>
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <input type='text' name='pizza[crust]'>
+    <input type='text' name='pizza[sauce]'>
+    <input type='text' name='pizza[size]'>
+    <input type='submit' value='Submit Pizza'>
+</form>

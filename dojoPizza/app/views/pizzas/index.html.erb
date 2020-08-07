@@ -6,6 +6,14 @@
         <% end %>
     </ul>
 <% end %>
+<table>
+<th>CRUST</th><th>SAUCE</th><th>SIZE</th>
 <% @pizzas.each do |pizza| %>
-    <p><%= pizza.crust %></p>
+<tr>
+    <td><%= pizza.crust %></td>
+    <td><%= pizza.sauce %></td>
+    <td><%= pizza.size %></td>
+</tr>
+    
 <% end %>
+</table>

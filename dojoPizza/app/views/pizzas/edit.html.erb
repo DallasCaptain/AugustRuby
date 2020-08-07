@@ -1,0 +1,8 @@
+<form action='/pizzas/<%= @pizza.id %>' method='POST'>
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <input type="hidden" name="_method" value="patch">
+    <input type='text' name='pizza[crust]' value='<%= @pizza.crust %>'>
+    <input type='text' name='pizza[sauce]' value='<%= @pizza.sauce %>'>
+    <input type='text' name='pizza[size]' value='<%= @pizza.size %>'>
+    <input type='submit' value='Update Pizza'>
+</form>

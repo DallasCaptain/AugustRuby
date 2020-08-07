@@ -1,12 +1,5 @@
 Rails.application.routes.draw do
-  get '' => 'pizzas#home'
-  get 'pizzas' => 'pizzas#index'
-  get 'pizzas/new' => 'pizzas#new'
-  get 'pizzas/:id/edit' => 'pizzas#edit'
-  post 'pizzas' => 'pizzas#create'
-  get 'pizzas/:id' => 'pizzas#show'
-  patch 'pizzas/:id' => 'pizzas#update'
-
+  resources :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
