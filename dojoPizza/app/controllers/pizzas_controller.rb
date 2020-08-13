@@ -1,10 +1,14 @@
 class PizzasController < ApplicationController
 
+  layout 'forms', only: [:edit, :new]
+
+
   def home
     render 'something'
   end
 
   def index
+    funfunction
     @pizzas = Pizza.all
   end
 
@@ -18,7 +22,7 @@ class PizzasController < ApplicationController
 
   def update
     Pizza.update(params[:id],pizza_params)
-    redirect_to '/pizzas'
+    redirect_to pizzas_path
   end
 
   def show

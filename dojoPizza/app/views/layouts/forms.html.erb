@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DojoPizza</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<%= yield :header %>
+<table>
+<tr><td><%= yield %></td><td><%= yield :stuff %></td></tr>
+</table>
+
+<h1>FORM Footer</h1>
+</body>
+</html>

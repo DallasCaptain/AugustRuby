@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   get '' => 'pizzas#home'
   get 'pizzas' => 'pizzas#index'
-  get 'pizzas/new' => 'pizzas#new'
-  get 'pizzas/:id/edit' => 'pizzas#edit'
+  get 'pizzas/new' => 'pizzas#new', as: 'pizza'
+  get 'pizzas/:id/edit' => 'pizzas#edit', as: 'pizzas_edit'
   post 'pizzas' => 'pizzas#create'
   get 'pizzas/:id' => 'pizzas#show'
   patch 'pizzas/:id' => 'pizzas#update'
